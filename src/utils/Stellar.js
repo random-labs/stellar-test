@@ -24,7 +24,7 @@ class Stellar {
 		this.publicKey = pair.publicKey();
 		this.secretKey = pair.secret();
 
-		logger.info(`Please save this key to keep the data: \npublicKey: ${this.publicKey}\nsecretKey: ${this.secretKey}`);
+		logger.info(`Please save those keys to keep the data: \npublicKey: ${this.publicKey}\nsecretKey: ${this.secretKey}`);
 	}
 
 	async createAccount() {
