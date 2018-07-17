@@ -10,7 +10,8 @@
     "start": "node src/index.js",
     "lint": "eslint .",
     "fix-code": "eslint . --fix",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "test": "NODE_ENV=test STELLAR_PUBLIC_KEY=GD76F4A7ZWTZQUGAC7U2VP2EB4PK4RBIA2HEYV4FR6SVVIATD4THG26R STELLAR_PRIVATE_KEY=SC4WPDBMKLYPDOOXCONJ4NRKYB3LZITPTAZAU6XSZYPDE2T4UFZQ4V4V jest"
   },
   "engines": {
     "node": ">=8"
@@ -18,7 +19,9 @@
   "devDependencies": {
     "commitizen": "^2.10.1",
     "eslint": "^5.1.0",
-    "eslint-config-lludol": "^0.1.8"
+    "eslint-config-lludol": "^0.1.8",
+    "jest": "^23.4.1",
+    "supertest": "^3.1.0"
   },
   "config": {
     "commitizen": {

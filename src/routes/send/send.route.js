@@ -1,5 +1,7 @@
+const { SevenBoom } = require('graphql-apollo-errors');
 const { Route } = require('@guivic/fabric-node');
 const Joi = require('joi');
+const StellarBase = require('stellar-base');
 
 const Stellar = require('../../utils/Stellar');
 
@@ -22,8 +24,14 @@ class Send extends Route {
 	async create(ctx) {
 		const { address, amount } = ctx.request.body;
 
-		const result = await Stellar.send(address, amount);
+		if (!StellarBase.StrKey.isValidEd25519PublicKey(address)) {
+			ctx.status = 400;
+			ctx.body = SevenBoom.badRequest('Please check the address', {}, 'invalid-address');
+			return;
+		}
 
+		let result = null;
+		result = await Stellar.send(address, amount);
 		ctx.body = result;
 	}
 }
