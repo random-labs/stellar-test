@@ -1,0 +1,37 @@
+{
+  "name": "stellar-test",
+  "version": "0.0.1",
+  "main": "index.js",
+  "repository": "git@github.com:lludol/stellar-test.git",
+  "author": "lludol",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "node src/index.js",
+    "lint": "eslint .",
+    "fix-code": "eslint . --fix",
+    "commit": "git-cz"
+  },
+  "engines": {
+    "node": ">=8"
+  },
+  "devDependencies": {
+    "commitizen": "^2.10.1",
+    "eslint": "^5.1.0",
+    "eslint-config-lludol": "^0.1.8"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "dependencies": {
+    "@guivic/fabric-node": "^0.0.13",
+    "graphql-apollo-errors": "^2.0.3",
+    "joi": "^13.4.0",
+    "node-fetch": "^2.1.2",
+    "request": "^2.87.0",
+    "request-promise-native": "^1.0.5",
+    "stellar-sdk": "^0.9.1"
+  }
+}
